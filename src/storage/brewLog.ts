@@ -89,7 +89,7 @@ export async function searchBrews(query: string): Promise<BrewEntry[]> {
   const log = await readLog();
   const q = query.toLowerCase();
   return log.entries.filter((e) => {
-    const searchable = [e.coffee.name, e.coffee.roaster, e.coffee.origin, e.profile.title]
+    const searchable = [e.coffee.name, e.coffee.roaster, e.coffee.origin, e.coffee.roast, e.coffee.processing, e.profile.title]
       .filter(Boolean)
       .join(' ')
       .toLowerCase();
@@ -106,8 +106,8 @@ export async function getSimilarBrews(coffee: {
   const log = await readLog();
   return log.entries.filter((e) => {
     if (coffee.origin && e.coffee.origin?.toLowerCase().includes(coffee.origin.toLowerCase())) return true;
-    if (coffee.roast && e.coffee.roast?.toLowerCase() === coffee.roast.toLowerCase()) return true;
-    if (coffee.processing && e.coffee.processing?.toLowerCase() === coffee.processing.toLowerCase()) return true;
+    if (coffee.roast && e.coffee.roast?.toLowerCase().includes(coffee.roast.toLowerCase())) return true;
+    if (coffee.processing && e.coffee.processing?.toLowerCase().includes(coffee.processing.toLowerCase())) return true;
     return false;
   });
 }
