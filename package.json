@@ -1,0 +1,35 @@
+{
+  "name": "aiden-ai-profile-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server to manage Fellow Aiden profiles and suggest brew recipes from a live Google Sheet + Drops.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun dist/index.js",
+    "build": "bunx tsc -p tsconfig.json",
+    "typecheck": "bunx tsc -p tsconfig.json --noEmit",
+    "lint": "biome lint src",
+    "lint:fix": "biome lint --write src",
+    "format": "biome format --write src",
+    "check": "biome check src",
+    "check:fix": "biome check --write src"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.3",
+    "csv-parse": "^5.6.0",
+    "zod": "^4.3.0"
+  },
+  "optionalDependencies": {
+    "keytar": "^7.9.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
+    "@types/node": "^22.15.29",
+    "typescript": "^5.8.3"
+  }
+}
