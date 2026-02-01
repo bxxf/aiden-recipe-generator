@@ -12,6 +12,8 @@ An MCP server that talks to your Fellow Aiden coffee machine - built entirely wi
 
 No more manually tweaking every variable in the Fellow app - just show it your coffee and let it figure out the rest.
 
+<img width="732" height="645" alt="ss-aiden" src="https://github.com/user-attachments/assets/3e304182-d40e-4570-ae2c-406f8a140f56" />
+
 ## Origin Story
 
 While at the Cafe Cursor event in Prague, I was thinking about what to build with Cursor. Until now I mostly used Claude Code, so I wanted a project from scratch where I could really test Cursor's capabilities.
