@@ -90,7 +90,7 @@ export class SheetProfileStore {
   async ensureCached(): Promise<void> {
     const cache = await this.readCache();
     if (!cache || Date.now() - cache.cachedAtMs > this.cacheTtlMs) {
-      await this.sync({ csvUrl: cache?.csvUrl });
+      await this.sync({ csvUrl: this.csvUrl });
     }
   }
 

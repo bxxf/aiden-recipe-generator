@@ -29,11 +29,15 @@ registerSheetTools(server, sheetStore);
 registerStorageTools(server);
 registerPrompts(server);
 
-/** Initialize the server: ensure sheet cache exists, connect transport. */
+/** Initialize the server: warm sheet cache if possible, connect transport. */
 async function start() {
-  await sheetStore.ensureCached();
-  const profiles = await sheetStore.getProfiles();
-  console.error(`Loaded ${profiles.length} community profiles`);
+  try {
+    await sheetStore.ensureCached();
+    const profiles = await sheetStore.getProfiles();
+    console.error(`Loaded ${profiles.length} community profiles`);
+  } catch (err) {
+    console.error('Failed to load community sheet (continuing without it):', err instanceof Error ? err.message : err);
+  }
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
