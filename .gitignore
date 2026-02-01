@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+
+# local caches / secrets
+.aiden-ai-profile-generator/
+
