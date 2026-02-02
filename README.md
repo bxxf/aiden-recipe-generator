@@ -48,11 +48,14 @@ So I reverse-engineered the API requests the Fellow mobile app sends to the mach
 ## Setup
 
 ```bash
+# Clone this repo
+git clone https://github.com/bxxf/aiden-recipe-generator.git
+
 # Install dependencies
 bun install
 
 # Add to Claude Code
-claude mcp add aiden bun run /path/to/cafe-cursor/src/index.ts
+claude mcp add aiden bun run /path-to-this-repo/src/index.ts
 ```
 
 ## Tools
